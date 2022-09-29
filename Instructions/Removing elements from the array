@@ -1,0 +1,15 @@
+The methods Shift() and Pop() will both remove elements at the ends of the array. To remove an item
+that is not at either end of the array, you need to use the Remove() method. This requires that you
+specify the inedex of the element.
+
+However, you can also use the IndexOf() method to lookup the index of a text string (full match,
+not a partial match).
+
+METHOD No. 1: Using an 0-based integer for the index.
+
+    objArray.Remove index:=4
+
+METHOD No. 2: Using IndexOf() to look up the index of a word. Note that this IS case sensitive.
+
+    objArray.Remove index:=objArray.IndexOf("whizbang")
+
