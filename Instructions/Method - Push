@@ -2,20 +2,20 @@ To add an element to the end of the array, use the Perl-style method Push
 
     Dim objArray As New clsArray
     objArray.Delimeter = ":"
+    objArray.ForceValue = True
     Dim strMyStuff As String
     strMyStuff = "Pears:Apples:Grapes:Bananas:Kiwis"
     objArray.SetArrayFromString content:=strMyStuff
 
-
-    
 To add one item:
     objArray.Push content:="Dragon Fruit"
 
 To add several items from a worksheet:
     Dim i as Integer
     For i = 1 To 20
-        If Range("A" & i).Value <> "" Then
-            objArray.Push content:=Range("A" & i).Value
-        End If
+        objArray.Push content:=Cells(i, 1).Value
     Next i
+    
+NOTE: Since I turned on the ForceValue flag, I don't need to check the cell for any content
+as the class method will do that.
     
