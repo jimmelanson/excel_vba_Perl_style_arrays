@@ -1,0 +1,23 @@
+To remove an item from the front of the list, use the Perl-style method Shift
+
+    Dim objArray As New clsArray
+    objArray.Delimeter = ":"
+    Dim strMyStuff As String
+    strMyStuff = "Pears:Apples:Grapes:Bananas:Kiwis"
+    objArray.SetArrayFromString content:=strMyStuff
+    
+    ... bunch of nifty code ...
+    
+Now process one item from the front of the list
+    Dim strItem as String
+    strItem = objArray.Shift
+    ... do stuff with strItem ...
+
+Now process all the items in the list from the front end AND remove the item
+from the list, thus shortening the list with each pass.
+METHOD No. 1
+    Dim strItem as String
+    Do While objArray.CountRemaining > 0
+        strItem = objArray.Shift
+        ... do stuff with strItem ...
+    Loop
