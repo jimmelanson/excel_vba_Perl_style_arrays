@@ -1,0 +1,45 @@
+You can sort the array asceding or descending. The sort is handled ascibettically. This means that
+upper-case letters are sorted ahead of lower-case letters and numbers are sorted ahead of letters.
+
+If you were to populate and array with this list:
+
+Pears
+salmon
+101
+Apples
+one
+two
+Kiwis
+416
+527Simonds
+alpha
+gamma
+beta
+Kumquats
+Dragon Fruits
+three
+four
+
+... and then call the sorting on it:
+
+    objArray.SortAscending
+
+... then you would get this list as a result:
+
+101
+416
+527Simonds
+Apples
+Dragon Fruits
+Kiwis
+Kumquats
+Pears
+alpha
+beta
+four
+gamma
+one
+salmon
+three
+two
+
