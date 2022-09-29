@@ -1,0 +1,15 @@
+The default delimeter for this object is the comma. You can specify a different delimeter but
+you must do so prior to passing the string of data to the object. You cannot change the
+delimeter after you have begun populating the object.
+
+    objArray.Delimeter = ":"
+
+You can force the object to only accept non-null values. That is, you can force the object
+to reject empty values. Remember, however, that a blank space is actually a real value.
+
+    objArray.ForceValue = True
+
+You can force the object to only accept unique values.
+
+    objArray.ForceUnique = True
+    
