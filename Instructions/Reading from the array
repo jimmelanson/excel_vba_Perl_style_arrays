@@ -1,0 +1,23 @@
+There is only one way to read from the array, by looking at the element at a specific index position.
+There are, however, a few different approaches.
+
+METHOD No. 1 - When you know the index:
+
+    strItem = objArray.Element(4)
+
+METHOD No. 2 - Iterating through all the items front to back
+
+    Dim i as Integer
+    For i = 0 to objArray.LastIndex
+        strItem = objArray.Element(i)
+        ... do nifty stuff with strItem ...
+    Next i
+    
+METHOD No. 3 - Iterating through all the items back to front
+               NOTE: Never use this back-to-front direction with Shift() or Pop() or Remove()
+
+    Dim i as Integer
+    For i = objArray.LastIndex to 0 Step -1
+        strItem - objArray.Element(i)
+        ... do nifty stuff with strItem ...
+    Next i
