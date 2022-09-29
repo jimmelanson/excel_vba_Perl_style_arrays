@@ -1,0 +1,61 @@
+Assume you have already declared your object:
+
+    Dim objArray As New clsArray
+    objArray.ForceValue = True
+    objArray.Delimeter = ":"
+
+ADD CONTENT VIA METHOD No. 1
+You can easily grab deta from a worksheet (user input) and populate the class object like this:
+
+    With ThisWorkbook.Worksheets("Sheet1")
+        Dim strMyStuff As String
+        Dim i As Long
+        For i = 0 To 25
+            If .Cells(i, 1).Value <> "" Then
+                objArray.Push content:=Cells(y, 1).Value
+            End If
+        Next y
+    End With
+    
+    
+ADD CONTENT VIA METHOD No. 2
+You can build a string of items with the proper delimeter and add the whole string at once.
+
+    With ThisWorkbook.Worksheets("Sheet1")
+        Dim strMyStuff As String
+        Dim i As Long
+        For i = 0 To 25
+            If strMyStuff <> "" Then
+                strMyStuff = strMyStuff & ":"
+            End If
+            If .Cells(i, 1).Value <> "" Then
+                strMyStuff = strMyStuff & Cells(y, 1).Value
+            End If
+        Next y
+        objArray.SetArrayFromString content:=strMyStuff
+    End With
+    
+
+ADD CONTENT VIA METHOD No. 3
+This method is usually done with a predetermined list of items to action your data against.
+    
+    Dim strMyStuff As String
+    strMyStuff = "Apples:Pears:Oranges:Blueberries:Dragon Fruit:Raspberries"
+    objArray.SetArrayFromString content:=strMyStuff
+    
+    
+   
+ADD CONTENT VIA METHOD No. 4
+You can also add content from a VBA array that you have already populated in your code. However,
+the VBA array MUST be of the type: Variant
+
+    Dim arrStuff(4) As Variant
+    arrStuff(0) = "Apples"
+    arrStuff(1) = "Pears"
+    arrStuff(2) = "Oranges"
+    arrStuff(3) = "Blueberries"
+    arrStuff(4) = "Dragon Fruit"
+    
+    objArray.SetArray list:=arrStuff
+
+    
