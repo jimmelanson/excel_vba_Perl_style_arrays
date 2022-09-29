@@ -1,0 +1,20 @@
+To add an element to the front of the array, use the Perl-style method Unshift
+
+    Dim objArray As New clsArray
+    objArray.Delimeter = ":"
+    objArray.ForceValue = True
+    Dim strMyStuff As String
+    strMyStuff = "Pears:Apples:Grapes:Bananas:Kiwis"
+    objArray.SetArrayFromString content:=strMyStuff
+
+To add one item:
+    objArray.Unshift content:="Dragon Fruit"
+
+To add several items from a worksheet:
+    Dim i as Integer
+    For i = 1 To 20
+        objArray.Unshift content:=Cells(i, 1).Value
+    Next i
+    
+NOTE: Since I turned on the ForceValue flag, I don't need to check the cell for any content
+as the class method will do that.
