@@ -43,3 +43,10 @@ salmon
 three
 two
 
+
+DESCENDING SORT:
+If you wish to sort the other direction, descending, you need sort the list ascending and then reverse the list:
+
+    objArray.SortAscending
+    objArray.Reverse
+    
