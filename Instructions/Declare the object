@@ -2,8 +2,8 @@ In the VBA Editor, make sure you import the file "clsArray.cls" and then save th
 
 You MUST use early binding for this object. In this example, that means you MUST use the keyword "New"
 
-**Dim objArray As New clsArray**
+Dim objArray As New clsArray
 
 DO NOT use late binding like the following as it will cause the object to pitch numerous exceptions.
-*Dim objArray As clsArray*
+Dim objArray As clsArray
 
