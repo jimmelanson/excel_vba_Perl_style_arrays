@@ -1,0 +1,55 @@
+[boolean value] = objectVariable.Splice([index], [content])
+
+
+The Splice() method allows you to apply a string list of items to any position in the
+array object. It will return True if successful and False if not.
+
+INSERT POSITION
+The position at which you are going to insert the new data is expressed as a 0-based
+index of the array. NOTE: The position indicated and everything following it will be
+shifted to the right or to the end of the array. The new data supplied will begin
+appearing at the index position indicated.
+
+For example, if you are adding "Mustard,Ketcup,Onions" to the existing list of
+"Relish,Hot Peppers,Pickles,Tomatoes" at index position 3 then you will wind up
+with the array ordered: Relish,Hot Peppers,Mustard,Ketchup,Onions,Pickles,Tomatoes
+
+And now I'm hungry.
+
+INDEX OF
+You can determine the index position you want to insert at by looping through the array
+and finding the item that indicates the start position. It would be much faster to
+use IndexOf(). NOTE: It only returns the first element matched.
+
+longIndex = objectVariable.IndexOf([string])
+
+
+INDEX OF REGEX
+There is also a method called IndexOfRegex() that will return the FIRST element that
+matches the pattern. NOTE: It only returns the first element matched.
+
+longFirstIndex = objArray.IndexOfRegex("\d{3}\.")
+
+NOTE: If you are searching text, you can make it case insensitive with the flag
+for this method, objectVariable.IndexOfRegexIgnoreCase = True
+
+
+INSERT CONTENT
+The string list you are adding can be formed several ways:
+
+AS VARIABLE
+If you are adding data derived from another source, concatenate it into a string with
+the proper delimeter and then add it. Note that it must be in the format:
+    itemDELIMETERitemDELIMETERitemDELIMETER
+
+objectVariable.Splice(4, strNewData)
+
+AS GREP RESULTS
+You can splice data from a Grep() on this array or on another clsArray object
+
+objectVariable.Splice(objectVariable.IndexOf("Sony"), differentObjectVariable.Grep("^c"))
+
+AS SLICE RESULTS
+You can use slice to help reorganize your array:
+
+objectVariable.Splice(2, objectVariable.Slice(8, 3))
