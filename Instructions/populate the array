@@ -1,3 +1,7 @@
+objectVariable.SetArrayFromList [string]
+objectVariable.SetArray [vba array]
+
+
 Assume you have already declared your object:
 
     Dim objArray As New clsArray
@@ -12,7 +16,7 @@ You can easily grab deta from a worksheet (user input) and populate the class ob
         Dim i As Long
         For i = 0 To 25
             If .Cells(i, 1).Value <> "" Then
-                objArray.Push content:=Cells(y, 1).Value
+                objArray.Push Cells(y, 1).Value ...OR... objArray.UnShift Cells(y, 1).Value
             End If
         Next y
     End With
@@ -25,23 +29,28 @@ You can build a string of items with the proper delimeter and add the whole stri
         Dim strMyStuff As String
         Dim i As Long
         For i = 0 To 25
-            If strMyStuff <> "" Then
-                strMyStuff = strMyStuff & ":"
-            End If
             If .Cells(i, 1).Value <> "" Then
+                If strMyStuff <> "" Then
+                    strMyStuff = strMyStuff & ":"
+                End If
                 strMyStuff = strMyStuff & Cells(y, 1).Value
             End If
         Next y
-        objArray.SetArrayFromString content:=strMyStuff
+        objArray.SetArrayFromString strMyStuff
     End With
     
 
 ADD CONTENT VIA METHOD No. 3
 This method is usually done with a predetermined list of items to action your data against.
+It's basically the same as method no. 2.
     
     Dim strMyStuff As String
     strMyStuff = "Apples:Pears:Oranges:Blueberries:Dragon Fruit:Raspberries"
-    objArray.SetArrayFromString content:=strMyStuff
+    objArray.SetArrayFromString strMyStuff
+    
+    ...OR...
+    
+    objArray.SetArrayFromString "Apples:Pears:Oranges:Blueberries:Dragon Fruit:Raspberries"
     
     
    
@@ -56,6 +65,6 @@ the VBA array MUST be of the type: Variant
     arrStuff(3) = "Blueberries"
     arrStuff(4) = "Dragon Fruit"
     
-    objArray.SetArray list:=arrStuff
+    objArray.SetArray arrStuff
 
     
