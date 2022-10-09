@@ -1,0 +1,6 @@
+strList = objectVariable.Grep("^\d\d.+\d\d$")
+differentObjectVariable.Splice(0, objectVariable.Grep("^\d\d.+\d\d$"))
+
+
+The Grep() method lets you grab multiple elements from the array based on a
+regular expression pattern. The items are returned as string list.
