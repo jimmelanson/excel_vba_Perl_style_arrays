@@ -1,0 +1,6 @@
+NOTE: Make sure you are removing items when using a Do-While loop, or that you implement
+some counter to make sure you don't end up in an infinite loop.
+
+Do-While removing items
+
+Dim
