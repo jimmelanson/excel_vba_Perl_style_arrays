@@ -9,6 +9,8 @@ This object takes a string of values and treats them as an array. If you're usin
 
 NOTE: Read the instructions! Early binding is mandatory with this class object.
 
+NOTE: The instructions folder has full explanations and examples for each of these.
+
 Here are the public methods you can access:
 
 <code>objArray.Delimeter</code> => Define what character separates the items in the list. Default is a comma.
@@ -17,9 +19,19 @@ Here are the public methods you can access:
 
 <code>objArray.ForceValue</code> => Turn this on and you will not be able to add a null value to the array.
 
-<code>objArray.SetArray list:=VBAArray</code> => This is how you populate the array class with an existing VBA array.
+<code>objArray.SetArray VBAArray</code> => This is how you populate the array class with an existing VBA array.
 
-<code>objArray.SetArrayFromString content:=strMyStuff</code> => This is how you add a string of items to the array.
+<code>objArray.SetArrayFromString strMyStuff</code> => This is how you add a string of items to the array.
+
+<code>objArray.SetArrayFromRange myRangeObject</code> => This is how you add items from a worksheet column.
+
+<code>objArray.Grep([regex pattern])</code> => Gather a list of items from the array but don't change the original array.
+
+<code>objArray.Slice([regex pattern OR index], [limit items])</code> => Gather a list of items from the array AND remove them from the original array.
+
+<code>objArray.Splice([index], [new contet])</code> => Insert one list into another at the specified position.
+
+<code>objArray.Join differentObjArray</code> => COmbine two array objects.
 
 <code>objArray.Push</code> => This will add an item to the back end of the list, thus increasing the size of the list.
 
@@ -33,15 +45,19 @@ Here are the public methods you can access:
 
 <code>objArray.IndexOf("string")</code> => This returns a zero-based index number for the specified items position in the list.
 
+<code>objArray.IndexOfRegex("string")</code> => This returns a zero-based index number for the first item matching the pattern.
+
 <code>objArray.Element(n)</code> => This returns a string with the contents of the element at position N.
 
-<code>objArray.CountElements</code> => This is a 1-based number of the elements in the list. If there are five items in the list, this returns the number 5.
+<code>objArray.Edit(n) = string</code> => This updates the contents of the element at position N.
 
-<code>objArray.CountRemaining</code> => This is a zero-based number of the elements in the list. If there are 5 items in the list, this returns the number 4. Effectively the same as LastIndex.
+<code>objArray.CountElements</code> => This is a 1-based number of the elements in the list. If there are five items in the list, this returns the number 5.
 
 <code>objArray.LastIndex</code> => This returns the index number of the last element in the list. Equivalent to UBound and effectively the same as CountRemaining. I just added this for clarity.
 
 <code>objArray.SortAscending</code> => This sorts the items in the list ascabetically from lowest to highest.
+
+<code>objArray.SortAsNumbers = [boolean]</code> Force the sort to treat the array items as number values instead of string characters.
 
 <code>objArray.Reverse</code> => This reverses the order of the items in the list.
 
