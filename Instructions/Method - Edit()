@@ -1,0 +1,9 @@
+objectVariable.Edit(n) = "[string]"
+
+
+To update the conet of an item, you can do it by specifying the index with this method.
+
+objectVariable.Edit(5) = "Raspberry Pie"
+
+objectVariable.Edit(objectVariable.IndexOf("Raspberry")) = "Raspberry Pie"
+
