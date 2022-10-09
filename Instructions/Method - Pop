@@ -1,3 +1,5 @@
+stringVariable = objectVariable.Pop
+
 To remove an item from the end of the list, use the Perl-style method Pop
 
     Dim objArray As New clsArray
