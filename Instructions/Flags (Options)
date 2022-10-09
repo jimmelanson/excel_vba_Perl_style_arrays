@@ -1,9 +1,12 @@
 objectVariable.Delimeter = "[character]"
 objectVariable.ForceUnique = [boolean value]
 objectVariable.ForceValue = [boolean value]
+
 objectVariable.GrepIgnoreCase = [boolean value]
-objectVariable.SliceIgnoreCase = [boolean value]
+objectVariable.IndexOfRegexIgnoreCase = [boolean value]
 objectVariable.RemoveIgnoreCase = [boolean value]
+objectVariable.SliceIgnoreCase = [boolean value]
+
 objectVariable.SortAsText = [boolean value]
 objectVariable.SortAsNumbers - [boolean value]
 
@@ -46,6 +49,9 @@ objectVariable.SliceIgnoreCase = True
 
 Remove()
 objectVariable.RemoveIgnoreCase = True
+
+IndexOfRegex()
+objectVariable.IndexOfRegexIgnoreCase = True
 
 
 SORTING FLAGS
