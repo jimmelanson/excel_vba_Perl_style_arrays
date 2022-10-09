@@ -1,18 +1,33 @@
-There are three methods that tell you how many items in the list. Assume we are
+There are two methods that tell you how many items in the list. Assume we are
 working with this list of five items: Blue, Red, Green, Yellow, Purple
 
-1-based integer of elements in the list
+1-based value of elements in the list
     objArray.CountElements
-    -> This returns the number 5
+    -> This returns the number 5 as a Long data type
     
 0-based integer of index positions in the list
-    objArray.CountRemaining
-    -> This returns the number 4
-
-0-based integer of index positions in the list
     objArray.LastIndex
-    -> This returns the number 4
+    -> This returns the number 4 as Long data type
 
-The last two, objArray.LastIndex and objArray.CountRemaining are intrinsically
-identical. The method LastIndex() was added purely for the ease of remembering
-the name to get the value.
+
+
+IF you want to FOR-LOOP through your array, you can use either one:
+
+For i = 0 to objArray.LastIndex
+    Debug.Print objArray.Element(i - 1)
+Next i
+or
+
+For i = 1 to objArray.CountElements
+    Debug.Print objArray.Element(i - 1)
+Next i
+
+
+
+If you are going to remove each item from the array as you process it,
+then you can use a DO-WHILE-LOOP with the CountElements() like this:
+
+Do While objArray.CountElements > 0
+    strValue = objArray.Shift
+    Debug.Print strValue
+Loop
