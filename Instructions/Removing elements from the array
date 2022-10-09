@@ -1,15 +1,28 @@
+objVariable.Remove([index])
+objVariable.Remove([regular expression])
+
+
+NOTE: This method does not return the value(s) removed.
+
+INDEX
 The methods Shift() and Pop() will both remove elements at the ends of the array. To remove an item
 that is not at either end of the array, you need to use the Remove() method. This requires that you
-specify the inedex of the element.
+specify the index of the element.
 
 However, you can also use the IndexOf() method to lookup the index of a text string (full match,
 not a partial match).
 
 METHOD No. 1: Using an 0-based integer for the index.
 
-    objArray.Remove index:=4
+    objVariable.Remove 4
 
 METHOD No. 2: Using IndexOf() to look up the index of a word. Note that this IS case sensitive.
 
-    objArray.Remove index:=objArray.IndexOf("whizbang")
+    objVariable.Remove objArray.IndexOf("whizbang")
 
+
+REGULAR EXPRESSION
+You can also remove items based on a regular expression pattern. Be aware that this method will
+remove ALL items that match the regular expression pattern.
+
+    objVariable.Remove("$.+\@.+\..+$")
