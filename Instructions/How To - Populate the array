@@ -1,5 +1,6 @@
 objectVariable.SetArrayFromList [string]
 objectVariable.SetArray [vba array]
+objectVariable.SetArrayFromRange [range object]
 
 
 Assume you have already declared your object:
@@ -67,4 +68,26 @@ the VBA array MUST be of the type: Variant
     
     objArray.SetArray arrStuff
 
+    
+ADDING CONTENT FROM A RANGE
+Probably the easiest way, with caveats, is to populate the array object from a range of cells on a worksheet.
+
+The limitations of the class require that you add a column, and not a row. You can also add from only one
+column, not multiple columns. I've been able to add several thousand cells of data at a time with this.
+
+    Dim varArray As New clsArray
+    varArray.Delimeter = ":"
+    
+    Dim myRange As Range
+    Set myRange = ThisWorkbook.Worksheets("LargeDataTest").Range("G1:G" & ThisWorkbook.Worksheets("LargeDataTest").Cells(Rows.count, 7).End(xlUp).Row)
+
+    varArray.SetArrayFromRange myRange
+    
+    Dim i As Long
+    For i = 0 To varArray.LastIndex
+        Debug.Print "varArray.Element(" & i & ") = " & varArray.Element(i)
+    Next i
+    
+    
+    
     
