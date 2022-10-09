@@ -61,15 +61,72 @@ If you have an array that is nothing but numbers, then you can force the sorting
 their actual values.
 
 Assume this is your list of numbers:
-1,2,56,98,345,8,543,21,1000,4,1001,10000,5678,23458,19,91,9
+1
+2.4
+56
+98
+2.3
+2.5
+345
+8
+543.6
+21
+1000
+4
+1001
+10000
+5678
+23458
+19
+91
+9
+
 
 If you call the default objArray.SortAscending on the list, you will get it asciibetically sorted:
 objectVariable.SortAscending
-Output:1,1000,10000,1001,19,2,21,23458,345,4,543,56,5678,8,9,91,98
+1
+1000
+10000
+1001
+19
+2.3
+2.4
+2.5
+21
+23458
+345
+4
+543.6
+56
+5678
+8
+9
+91
+98
+
 
 If you set the flag to sort as numbers, then you will get a numerical sort on the numbers:
 
 objectVariable.SortAsNumbers = True
 objectVariable.SortAscending
-Output: 1,2,4,8,9,19,21,56,91,98,345,543,1000,1001,5678,10000,23458
+1
+2.3
+2.4
+2.5
+4
+8
+9
+19
+21
+56
+91
+98
+345
+543.6
+1000
+1001
+5678
+10000
+23458
+
     
