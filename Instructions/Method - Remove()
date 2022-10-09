@@ -26,3 +26,6 @@ You can also remove items based on a regular expression pattern. Be aware that t
 remove ALL items that match the regular expression pattern.
 
     objVariable.Remove("$.+\@.+\..+$")
+
+
+NOTE: You can also remove items with Slice().
