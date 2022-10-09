@@ -1,0 +1,43 @@
+strList = objectVariable.Slice([index start])
+strList = objectVariable.Slice([index start], [number of items])
+strList = objectVariable.Slice([regex])
+strList = objectVariable.Slice([regex], [number of items])
+
+
+This method extracts a string list of items from the array. This means that it
+both returns the string list to you AND it removes the indicated items from
+the array, thus shortening the array.
+
+It takes two arguments, the second one being optional.
+
+The first argument will be either the 0-based index position at which to start OR
+it can be a regular expression. When you use an index, the method will then
+start slicing every following item in the array until NUMBER OF ITEMS have been
+sliced.
+
+If the first argument is a regular expression, then the method will continue
+to slice matching items until NUMBER OF ITEMS have been sliced.
+
+NOTE: If you do not provide a NUMBER OF ITEMS for the method to slice, then the
+method will select all following elements with an index, or select all matching
+items with a regex.
+
+Example string list: E3C2E9,E3C2M2,E3C2E8,E3B8K4,E3B8K6,E3B0J1,E3C0E5,E3B8K3,E3B8L1,E3C2G1,E3C0C3,E3B9L3,E3B8M5
+
+objectVariable.Slice(7)
+This returns from index 7 to the end: E3B8K3,E3B8L1,E3C2G1,E3C0C3,E3B9L3,E3B8M5
+The original list is shortened to: E3C2E9,E3C2M2,E3C2E8,E3B8K4,E3B8K6,E3B0J1,E3C0E5
+
+objectVariable.Slice(4, 3)
+This returns three items starting at index 4: E3B0J1,E3C0E5,E3B8K3
+The original list is shortened to: E3C2E9,E3C2M2,E3C2E8,E3B8K4,E3B8K6,E3B8L1,E3C2G1,E3C0C3,E3B9L3,E3B8M5
+
+objectVariable.SliceIgnoreCase = True
+objectVariable.Slice("^e3b")
+This returns items tarting with "E3B": E3B8K4,E3B8K6,E3B0J1,E3B8K3,E3B8L1,E3B9L3,E3B8M5
+The original list is shortened to: E3C2E9,E3C2M2,E3C2E8,E3C0E5,E3C2G1,E3C0C3
+
+objectVariable.SliceIgnoreCase = True
+objectVariable.Slice("^e3b", 4)
+This returns items tarting with "E3B": E3B8K4,E3B8K6,E3B0J1,E3B8K3
+The original list is shortened to: E3C2E9,E3C2M2,E3C2E8,E3C0E5,E3B8L1,E3C2G1,E3C0C3,E3B9L3,E3B8M5
