@@ -1,0 +1,18 @@
+longIndex = objectVariable.IndexOf([exact string])
+longIndex = objectVariable.IndexOfRegex([regex pattern])
+
+
+There are several ways to find the index of a particular item in the array object.
+You can loop through the array and examine each object yourself, or use one of
+the two index return methods.
+
+IndexOf
+This requires you provide an exact match for the item you are seeking. For example:
+longItemIndex = objectVariable.IndexOf("42AS-34E9-22FG-01")
+
+IndexOfRegex
+If you are looking for the first serial number with two digits at the start and at
+the end, then you would not be able to use an exact match. In this case use a regex
+pattern.
+
+longItemIndex = objectVariable.IndexOfRegex("^\d\d.+\d\d$")
