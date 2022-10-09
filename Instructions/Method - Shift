@@ -1,6 +1,6 @@
 stringVariable = objectVariable.Shift
 
-To remove an item from the front of the list, use the Perl-style method Shift
+To remove an item from the front of the array, use the Perl-style method Shift().
 
     Dim objArray As New clsArray
     objArray.Delimeter = ":"
@@ -10,16 +10,16 @@ To remove an item from the front of the list, use the Perl-style method Shift
     
     ... bunch of nifty code ...
     
-Now process one item from the front of the list
+Now process one item from the front of the array.
     Dim strItem as String
     strItem = objArray.Shift
     ... do stuff with strItem ...
 
-Now process all the items in the list from the front end AND remove the item
-from the list, thus shortening the list with each pass.
+Now process all the items in the array from the front end AND remove the item
+from the array, thus shortening the array with each pass.
 METHOD No. 1
     Dim strItem as String
-    Do While objArray.CountRemaining > 0
+    Do While objArray.CountElements > 0
         strItem = objArray.Shift
         ... do stuff with strItem ...
     Loop
