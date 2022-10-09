@@ -1,9 +1,12 @@
 objectVariable.SortAscending
 objectVariable.Reverse
+objectVariable.SortAsText = [boolean value]
+objectVariable.SortAsNumbers - [boolean value]
 
 
+SORTING TEXT
 You can sort the array asceding or descending. The sort is handled ascibettically. This means that
-upper-case letters are sorted ahead of lower-case letters and numbers are sorted ahead of letters.
+upper-case letters are sorted ahead of lower-case letters and numbers are sorted by individual characters ahead of letters.
 
 If you were to populate and array with this list:
 
@@ -12,15 +15,13 @@ salmon
 101
 Apples
 one
-two
-Kiwis
 416
-527Simonds
+527 Alpha
+527Beta
 alpha
-gamma
-beta
-Kumquats
+10
 Dragon Fruits
+1000
 three
 four
 
@@ -28,29 +29,47 @@ four
 
     objArray.SortAscending
 
-... then you would get this list as a result:
+... then you would get this asciibetically sorted list as a result:
 
+10
+1000
 101
 416
-527Simonds
+527 Alpha
+527Beta
 Apples
 Dragon Fruits
-Kiwis
-Kumquats
 Pears
 alpha
-beta
 four
-gamma
 one
 salmon
 three
-two
 
-
-DESCENDING SORT:
+DESCENDING
 If you wish to sort the other direction, descending, you need sort the list ascending and then reverse the list:
 
     objArray.SortAscending
     objArray.Reverse
+
+
+SORTING NUMBERS
+Numbes are sorted asciibetically by default. That is, they are sorted based on the individual characters that appear
+in each item, rather than sorting them based on the value of the item.
+
+If you have an array that is nothing but numbers, then you can force the sorting method to arrange them based on
+their actual values.
+
+Assume this is your list of numbers:
+1,2,56,98,345,8,543,21,1000,4,1001,10000,5678,23458,19,91,9
+
+If you call the default objArray.SortAscending on the list, you will get it asciibetically sorted:
+objectVariable.SortAscending
+Output:1,1000,10000,1001,19,2,21,23458,345,4,543,56,5678,8,9,91,98
+
+If you set the flag to sort as numbers, then you will get a numerical sort on the numbers:
+
+objectVariable.SortAsNumbers = True
+objectVariable.SortAscending
+Output: 1,2,4,8,9,19,21,56,91,98,345,543,1000,1001,5678,10000,23458
     
