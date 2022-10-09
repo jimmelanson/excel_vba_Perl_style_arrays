@@ -4,6 +4,8 @@ objectVariable.ForceValue = [boolean value]
 objectVariable.GrepIgnoreCase = [boolean value]
 objectVariable.SliceIgnoreCase = [boolean value]
 objectVariable.RemoveIgnoreCase = [boolean value]
+objectVariable.SortAsText = [boolean value]
+objectVariable.SortAsNumbers - [boolean value]
 
 DELIMETER
 The default delimeter for this object is the comma. You can specify a different delimeter but
@@ -44,3 +46,13 @@ objectVariable.SliceIgnoreCase = True
 
 Remove()
 objectVariable.RemoveIgnoreCase = True
+
+
+SORTING FLAGS
+objectVariable.SortAsText
+objectVariable.SortAsNumbers
+
+See Sorting() and Reverse() for a full explanation.
+
+
+
