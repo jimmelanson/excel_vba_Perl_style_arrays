@@ -1,15 +1,18 @@
-There is only one way to read from the array, by looking at the element at a specific index position.
-There are, however, a few different approaches.
+stringVariable = objArray.Element([index])
+
+
+The Element() method retrieves the content at a specific index position.
+There are a few different approaches to this.
 
 METHOD No. 1 - When you know the index:
 
-    strItem = objArray.Element(4)
+    stringVariable = objArray.Element(4)
 
 METHOD No. 2 - Iterating through all the items front to back
 
     Dim i as Integer
     For i = 0 to objArray.LastIndex
-        strItem = objArray.Element(i)
+        stringVariable = objArray.Element(i)
         ... do nifty stuff with strItem ...
     Next i
     
@@ -18,6 +21,11 @@ METHOD No. 3 - Iterating through all the items back to front
 
     Dim i as Integer
     For i = objArray.LastIndex to 0 Step -1
-        strItem - objArray.Element(i)
+        stringVariable - objArray.Element(i)
         ... do nifty stuff with strItem ...
     Next i
+
+
+NOTE: In addition to this method, you can also extract content with Grep() and Slice().
+
+NOTE: To edit the content at a specific index position, see Edit().
