@@ -1,0 +1,27 @@
+objectVariable.Join differentObjectVariable
+Call objectVariable.Join(differentObjectVariable)
+
+
+This method allows you to join data from another clsArray object. The different
+array object content will be added to the end of the primary array object. If
+you prefer it to be added to the front, see the Splice() method.
+
+Since both objects are created and populated, one is joined to the other
+with a simple statement:
+
+objectVariable.Join differentObjectVariable
+
+NOTE: If the primary object (objectVariable) has ForceValue or ForceUnique set
+to true, then those paramters will be applied to the object array values that
+are called to be joined.
+
+Example:
+Dim objectVariable as New clsArray
+objectVariable.SetArrayFromString "Blue,Yellow,Gold"
+
+Dim differentObjectVariable as New clsArray
+differentObjectVariable.SetArrayFromString "Magenta,Fuschia,Aubergine"
+
+objectVariable.Join differentObjectVariable
+
+objectVariable.raw will now output: Blue,Yellow,Gold,Magenta,Fuschia,Aubergine
