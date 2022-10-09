@@ -1,0 +1,9 @@
+
+Dim objectVariable as New clsArray
+objectVariable.SetArrayFromString = strContentICreated
+
+Dim i as Long
+For i = 0 to objectVariable.LastIndex
+    ... do nifty stuff with objectVariable.Element(i) ...
+Next i
+
