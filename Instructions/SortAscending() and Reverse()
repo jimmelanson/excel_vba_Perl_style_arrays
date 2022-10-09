@@ -1,3 +1,7 @@
+objectVariable.SortAscending
+objectVariable.Reverse
+
+
 You can sort the array asceding or descending. The sort is handled ascibettically. This means that
 upper-case letters are sorted ahead of lower-case letters and numbers are sorted ahead of letters.
 
