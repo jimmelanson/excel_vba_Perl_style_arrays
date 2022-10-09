@@ -1,4 +1,6 @@
-objectVariable.Push([string])
+objectVariable.Push ([string])
+objectVariable.Push [string]
+Call objectVariable.Push([string])
 
 To add an element to the end of the array, use the Perl-style method Push
 
