@@ -1,15 +1,46 @@
+objectVariable.Delimeter = "[character]"
+objectVariable.ForceUnique = [boolean value]
+objectVariable.ForceValue = [boolean value]
+objectVariable.GrepIgnoreCase = [boolean value]
+objectVariable.SliceIgnoreCase = [boolean value]
+objectVariable.RemoveIgnoreCase = [boolean value]
+
+DELIMETER
 The default delimeter for this object is the comma. You can specify a different delimeter but
 you must do so prior to passing the string of data to the object. You cannot change the
 delimeter after you have begun populating the object.
 
-    objArray.Delimeter = ":"
+    objectVariable.Delimeter = ":"
 
+
+FORCE VALUE
 You can force the object to only accept non-null values. That is, you can force the object
-to reject empty values. Remember, however, that a blank space is actually a real value.
+to reject empty values. Remember, however, that a blank space is actually a real value and
+will get added. Make sure you process your data before adding it!
 
-    objArray.ForceValue = True
+    objectVariable.ForceValue = True
 
-You can force the object to only accept unique values.
+
+FORCE UNIQUE
+You can force the object to only accept unique values. Note that this applies to the methods:
+Push(), UnShift(), SetArray(), SetArrayFromList(), Splice(), Join()
 
     objArray.ForceUnique = True
-    
+
+
+IGNORE CASE
+The three methods that apply a regular expression to content being passed to it allow you to
+specify whether that content will be evaluated case-sensitive or case-insensitive.
+
+You should problably think of these backwards, as they are a bit counter intuitive. The default
+for each of these methods is to be case-SENSITIVE. Therefore, to turn off case sensitivity,
+you set these values to TRUE so that the method will start to ignore the case of the content.
+
+Grep()
+objectVariable.GrepIgnoreCase = True
+
+Slice()
+objectVariable.SliceIgnoreCase = True
+
+Remove()
+objectVariable.RemoveIgnoreCase = True
