@@ -1,3 +1,5 @@
+objectVariable.Push([string])
+
 To add an element to the end of the array, use the Perl-style method Push
 
     Dim objArray As New clsArray
@@ -13,7 +15,7 @@ To add one item:
 To add several items from a worksheet:
     Dim i as Integer
     For i = 1 To 20
-        objArray.Push content:=Cells(i, 1).Value
+        objArray.Push Cells(i, 1).Value
     Next i
     
 NOTE: Since I turned on the ForceValue flag, I don't need to check the cell for any content
