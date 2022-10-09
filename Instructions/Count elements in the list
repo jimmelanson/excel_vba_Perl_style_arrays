@@ -1,3 +1,6 @@
+longVariable = objArray.CountElements
+longVariable = objArray.LastIndex
+
 There are two methods that tell you how many items in the list. Assume we are
 working with this list of five items: Blue, Red, Green, Yellow, Purple
 
@@ -5,7 +8,7 @@ working with this list of five items: Blue, Red, Green, Yellow, Purple
     objArray.CountElements
     -> This returns the number 5 as a Long data type
     
-0-based integer of index positions in the list
+0-based value of index positions in the list
     objArray.LastIndex
     -> This returns the number 4 as Long data type
 
