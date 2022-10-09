@@ -1,3 +1,7 @@
+objectVariable.UnShift ([string])
+objectVariable.UnShift [string]
+Call objectVariable.UnShift([string])
+
 To add an element to the front of the array, use the Perl-style method Unshift
 
     Dim objArray As New clsArray
@@ -7,14 +11,19 @@ To add an element to the front of the array, use the Perl-style method Unshift
     strMyStuff = "Pears:Apples:Grapes:Bananas:Kiwis"
     objArray.SetArrayFromString content:=strMyStuff
 
-To add one item:
-    objArray.Unshift content:="Dragon Fruit"
+To add one item to the front of the array:
+    objArray.UnShift "Dragon Fruit"
 
-To add several items from a worksheet:
+To add several items from a worksheet, putting each one at the front of the array:
     Dim i as Integer
     For i = 1 To 20
-        objArray.Unshift content:=Cells(i, 1).Value
+        objArray.UnShift Cells(i, 1).Value
     Next i
     
 NOTE: Since I turned on the ForceValue flag, I don't need to check the cell for any content
 as the class method will do that.
+
+NOTE: The for loop in this example adss items one at a time. This is useful if you want
+to process the items before adding them. You can add multiple items in one statuement
+by using Splice() or Join()
+
